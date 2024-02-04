@@ -68,4 +68,3 @@ ID do Destinatário (chave estrangeira, referenciando Pacientes ou Psicólogos):
 Texto da Mensagem: O conteúdo textual da mensagem.
 Data e Hora de Envio: A data e hora em que a mensagem foi enviada.
 Status da Mensagem (opcional): Indica se a mensagem foi lida, não lida, excluída, etc.
-
