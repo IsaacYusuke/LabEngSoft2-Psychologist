@@ -61,7 +61,7 @@ Informações de login (se o sistema suportar login de usuários)
 Hashes de Senha (nunca armazene senhas em texto claro)  
 Tokens de Sessão ou JWTs (para controle de sessão, especialmente em APIs)  
 
-###Mensagens
+### Mensagens
 ID da Mensagem (chave primária): Um identificador único para cada mensagem.
 ID do Remetente (chave estrangeira, referenciando Pacientes ou Psicólogos): Identifica quem enviou a mensagem. Você precisará de uma forma de diferenciar entre pacientes e psicólogos, talvez com um campo adicional ou uma estrutura de ID que diferencie os dois tipos de usuários.
 ID do Destinatário (chave estrangeira, referenciando Pacientes ou Psicólogos): Identifica para quem a mensagem foi enviada.
