@@ -60,3 +60,11 @@ Anexos (pode ser usado para armazenar arquivos, como resultados de exames)
 Informações de login (se o sistema suportar login de usuários)  
 Hashes de Senha (nunca armazene senhas em texto claro)  
 Tokens de Sessão ou JWTs (para controle de sessão, especialmente em APIs)  
+
+### Mensagens
+ID da Mensagem (chave primária): Um identificador único para cada mensagem.
+ID do Remetente (chave estrangeira, referenciando Pacientes ou Psicólogos): Identifica quem enviou a mensagem. Você precisará de uma forma de diferenciar entre pacientes e psicólogos, talvez com um campo adicional ou uma estrutura de ID que diferencie os dois tipos de usuários.
+ID do Destinatário (chave estrangeira, referenciando Pacientes ou Psicólogos): Identifica para quem a mensagem foi enviada.
+Texto da Mensagem: O conteúdo textual da mensagem.
+Data e Hora de Envio: A data e hora em que a mensagem foi enviada.
+Status da Mensagem (opcional): Indica se a mensagem foi lida, não lida, excluída, etc.
