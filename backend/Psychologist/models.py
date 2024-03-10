@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime, timedelta, time
+#import requests
 
 # Create your models here.
 
@@ -19,8 +20,8 @@ class Psychologist(models.Model):
         db_table = "psychologist"
     
     def __str__(self):
-        return "(" + self.pk + ")" + self.name
-    
+        return f"({self.pk}) {self.full_name}"
+
     def get_available_slots(self, days=30):
         """
         Retorna os horários disponíveis para o psicólogo nos próximos 'days' dias.
@@ -104,8 +105,8 @@ class Consultation(models.Model):
         ('Cancelled', 'Cancelled'),
     ]
     psychologist = models.ForeignKey(Psychologist, related_name='consultations', on_delete=models.CASCADE)
-    id_patient = models.PositiveIntegerField
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='requested')
+    id_patient = models.PositiveIntegerField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Requested')
     scheduled_time = models.DateTimeField()
     payment_proof = models.FileField(upload_to='payment_proofs/', null=True, blank=True)
 
