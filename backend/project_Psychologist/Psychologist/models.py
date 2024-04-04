@@ -16,6 +16,7 @@ class Psychologist(models.Model):
     start_time_afternoon = models.TimeField()
     end_time_afternoon = models.TimeField()
     consultation_price = models.DecimalField(max_digits=10, decimal_places=2)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
 
     class Meta: 
         db_table = "psychologist"

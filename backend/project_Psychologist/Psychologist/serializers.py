@@ -4,6 +4,7 @@ from .models import Psychologist, Consultation
 class PsychologistSerializer(serializers.ModelSerializer):
     available_slots = serializers.SerializerMethodField()
     scheduled_consultations = serializers.SerializerMethodField()
+    profile_picture = serializers.ImageField(max_length=None, use_url=True)
 
     class Meta:
         model = Psychologist
