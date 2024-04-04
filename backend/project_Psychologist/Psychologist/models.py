@@ -15,6 +15,7 @@ class Psychologist(models.Model):
     end_time_morning = models.TimeField()
     start_time_afternoon = models.TimeField()
     end_time_afternoon = models.TimeField()
+    consultation_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta: 
         db_table = "psychologist"
