@@ -21,6 +21,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('Psychologist.urls')),  # Inclui as URLs do app Psychologist
+    path('', include('Psychologist.urls')),  # Inclui as URLs do app Psychologist
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

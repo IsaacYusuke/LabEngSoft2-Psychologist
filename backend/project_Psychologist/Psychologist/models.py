@@ -118,3 +118,13 @@ class Consultation(models.Model):
             models.UniqueConstraint(fields=['psychologist', 'scheduled_time'], name='unique_scheduled_time_for_psychologist'),
             models.UniqueConstraint(fields=['id_patient', 'scheduled_time'], name='unique_scheduled_time_for_patient'),
         ]
+        
+class Patient(models.Model):
+    name = models.CharField(max_length=255, null=False, blank=False)
+    date_of_birth = models.DateField(blank=False, null=False)
+    email = models.EmailField(max_length=255, unique=True, blank=False, null=False)
+    phone_number = models.CharField(max_length=15, blank=True, default="")
+    document = models.CharField(max_length=15, unique=True, blank=True, null=True)
+    height = models.DecimalField(decimal_places=2, max_digits=3, null=True, blank=True)
+    weight = models.PositiveIntegerField(null=True, blank=True)
+    history = models.TextField(max_length=500, null=True, blank=True)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Psychologist, Consultation
+from .models import Psychologist, Consultation, Patient
 
 class PsychologistSerializer(serializers.ModelSerializer):
     available_slots = serializers.SerializerMethodField()
@@ -24,3 +24,8 @@ class ConsultationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consultation
         fields = '__all__'
+
+class PatientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patient
+        fields = "__all__"
