@@ -17,6 +17,7 @@ urlpatterns = [
     path('consultation/create/', ConsultationView.as_view({'post': 'create'})),
     path('consultation/<int:pk>/', ConsultationView.as_view({'get': 'retrieve'})),
     path('consultation/list/<int:prof>/', ConsultationView.as_view({'get': 'list_from_psychologist'})),
+    path('consultation/update/<int:pk>/', ConsultationView.as_view({'patch': 'partial_update'})),
     path('patient/list/', PatientView.as_view({'get': 'list_all'})),
     path('patient/create/', PatientView.as_view({'post': 'create'})),
     path('patient/<int:pk>/', PatientView.as_view({'get': 'retrieve'})),

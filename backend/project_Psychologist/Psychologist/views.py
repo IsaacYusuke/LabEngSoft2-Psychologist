@@ -83,6 +83,11 @@ class ConsultationView(ViewSet):
 
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+    def partial_update(self, request, *args, **kwargs):
+        # Você pode adicionar lógica customizada aqui se necessário
+        return super().partial_update(request, *args, **kwargs)
+
+    
 
 class PatientView(ViewSet):
     def create(self, request):
